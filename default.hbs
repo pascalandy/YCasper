@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    {{! Document Settings }}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  {{! Document Settings }}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  {{! Page Meta }}
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="{{@blog.url}}/assets/favicon.ico">
+  {{! Styles'n'Scripts }}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" media="foobar" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" media="foobar" />
+  <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Montserrat"!important;
+      font-weight: 700;
+    }
 
-    {{! Page Meta }}
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
-
-    {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
-
-    {{! Ghost outputs important style and meta data with this tag }}
-    {{ghost_head}}
+    body,
+    p {
+      font-family: "Open Sans"!important;
+      font-weight: 400;
+    }
+  </style>
+  {{! Ghost outputs important style and meta data with this tag }}
+  {{ghost_head}}
 </head>
+
 <body class="{{body_class}} nav-closed">
-
-    {{navigation}}
-
-    <div class="site-wrapper">
-
-        {{! Everything else gets inserted here }}
-        {{{body}}}
-
-        <footer class="site-footer clearfix">
-            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-        </footer>
-
-    </div>
-
-    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
-
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    {{! The main JavaScript file for Casper }}
+  {{navigation}}
+  <div class="site-wrapper">
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+      <footer class="site-footer clearfix">
+        <section class="copyright">
+          <i class="fa fa-creative-commons fa-2x"></i> <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">blog.itchy.nl</span> by <a xmlns:cc="//creativecommons.org/ns#" href="//blog.itchy.nl" property="cc:attributionName" rel="cc:attributionURL">Yee Chie Tu</a> is licensed under a <a rel="license" href="//creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a>.
+        </section>
+        <section class="poweredby">Proudly published with <a href="//ghost.org" title="Ghost" target="_blank">Ghost</a>. Powered by <a href="//www.vultr.com/?ref=6878145" title="Vultr" target="_blank">Vultr</a> <img src="{{@blog.url}}/content/images/2016/03/logo_onwhite.png" alt="Vultr" width="20" height="21" /></section>
+      </footer>
+  </div>
+  {{! Styles'n'Scripts }}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  {{! Ghost outputs important scripts and data with this tag }}
+  {{ghost_foot}}
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    {{! The main JavaScript file index.js for Casper }}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    <script src="//load.sumome.com/" data-sumo-site-id="e2dcf6e56687eac0baa7140606462e94e10f65fffefd6811952c80b7bc7d51a9" async="async"></script>
 </body>
+
 </html>
