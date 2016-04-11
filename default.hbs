@@ -13,27 +13,14 @@
   <link rel="shortcut icon" href="{{@blog.url}}/assets/favicon.ico">
   <link rel="dns-prefetch" href="//fonts.gstatic.com" />
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="//opensource.keycdn.com" />
   <link rel="preconnect" href="//cdnjs.cloudflare.com" crossorigin />
   <link rel="preconnect" href="//fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="//opensource.keycdn.com" crossorigin />
   {{! Styles'n'Scripts }}
   <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-  <style>
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Montserrat"!important;
-      font-weight: 700;
-    }
-
-    body,
-    p {
-      font-family: "Open Sans"!important;
-      font-weight: 400;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400,500,400italic,500italic|Fjalla+One" />
   {{! Ghost outputs important style and meta data with this tag }}
   {{ghost_head}}
 </head>
@@ -53,14 +40,14 @@
         </section>
       </footer>
   </div>
-  <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
-  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//opensource.keycdn.com/fontawesome/4.5.0/font-awesome.min.css" />
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
   {{! Ghost outputs important scripts and data with this tag }}
   {{ghost_foot}}
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
     {{! The main JavaScript file index.js for Casper }}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
-    <script type="text/javascript" data-cfasync="true" src="{{asset "js/prism.js"}}"></script>
 </body>
 
 </html>
